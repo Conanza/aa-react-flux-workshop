@@ -1,7 +1,7 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var Tabs = require('./tabs');
-
+const React = require('react');
+const ReactDOM = require('react-dom');
+const Tabs = require('./tabs');
+const WeatherClock = require('./weatherClock');
 
 var myTabs = [
   { title: 'hello', content: 'world'},
@@ -12,7 +12,10 @@ var myTabs = [
 var Widgets = React.createClass({
   render: function () {
     return (
-      <Tabs items={myTabs} />
+      <div>
+        <Tabs items={myTabs} />
+        <WeatherClock />
+      </div>
     );
   }
 });
