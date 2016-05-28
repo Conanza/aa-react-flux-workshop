@@ -49,7 +49,7 @@ var Weather = React.createClass({
         url: 'http://' + reqPath,
         success: resp => {
           this.setState({
-            weather: resp.weather[0].main,
+            weather: resp.weather[0].description,
             temperature: ((resp.main.temp * 9) / 5 - 459.67).toFixed(2)
           });
         }
