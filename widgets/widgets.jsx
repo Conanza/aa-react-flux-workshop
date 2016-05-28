@@ -18,5 +18,5 @@ var Widgets = React.createClass({
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  ReactDOM.render(<Widgets/>, document.getElementById('main'))
+  ReactDOM.render(<Widgets/>, document.getElementById('main'));
 });
