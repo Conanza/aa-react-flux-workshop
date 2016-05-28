@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My First Component</title>
+
+    <script src="https://fb.me/react-0.14.2.js"></script>
+    <script src="https://fb.me/react-dom-0.14.2.js"></script>
+  </head>
+  <body>
+    <div id="my-component"></div>
+    <div id="click-counter-button"></div>
+
+    <script>
+      ReactDOM.render(
+        React.createElement('div', {}, 'Hello from REACT!'),
+        document.getElementById('my-component')
+      );
+
+      var ClickCounter = React.createClass({
+        click: function () {
+          this.setState({ count: this.state.count + 1 });
+        },
+        getInitialState: function () {
+          return { count: 0 };
+        },
+        render: function () {
+          return React.createElement(
+            'div',
+            {},
+            React.createElement('button', { onClick: this.click }, 'CLICK ME'),
+            React.createElement('span', {}, ' ' + this.state.count)
+          );
+        }
+      });
+
+      ReactDOM.render(
+        React.createElement(ClickCounter, {}, ''),
+        document.getElementById('click-counter-button')
+      );
+    </script>
+  </body>
+</html>
